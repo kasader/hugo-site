@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on kasader.cc/</title>
+    <link>http://localhost:1313/posts/</link>
+    <description>Recent content in Posts on kasader.cc/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Jun 2024 20:09:55 -0400</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Building a Static-Site With the Hugo Framework</title>
+      <link>http://localhost:1313/posts/hugo-site/</link>
+      <pubDate>Thu, 20 Jun 2024 20:09:55 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/hugo-site/</guid>
+      <description>&lt;p&gt;I did not have trouble getting &lt;a href=&#34;&#34;&gt;this site&lt;/a&gt; up at all. For several years up-until now I have long desired to launch a personal website and blog; I needed a place to keep all of my thoughts together, and to structure around some narrative (&lt;a href=&#34;https://www.sciencedaily.com/releases/2018/04/180420122913.htm&#34;&gt;being seen by the public at large&lt;/a&gt;) to both help me learn, and (perhaps) to help others as well. Yet as nearly all ideas fall to the wayside, so were my hopes of web (land) ownership dashed by incessant demands of work and school. And so I entered a long period, the search for an efficient framework for &lt;a href=&#34;https://en.wikipedia.org/wiki/Static_site_generator&#34;&gt;static-site generation (SSG)&lt;/a&gt;, which went without much avail.&lt;/p&gt;
+&lt;p&gt;As a back-end developer, I have always found web development to be convoluted and too deeply obfuscated with too many dependencies, standards, and layers of abstraction. I &lt;strong&gt;ALWAYS&lt;/strong&gt; stand by the &lt;a href=&#34;&#34;&gt;KISS principle&lt;/a&gt; (&amp;ldquo;Keep It Simple, Stupid!&amp;rdquo;). I have taken stabs at web development with courses in HTML/CSS and applying JavaScript web-frameworks like &lt;a href=&#34;&#34;&gt;React&lt;/a&gt; or &lt;a href=&#34;&#34;&gt;Next.js&lt;/a&gt;. Although the basics are not complex, all of the paradigms that stand in-between the the rendered site in-broswer and the bare-metal process server-side do not serve as a good experience of dissection for one obsessed with the &lt;em&gt;why&amp;rsquo;s&lt;/em&gt; and &lt;em&gt;how&amp;rsquo;s&lt;/em&gt;. And so, in keeping it all simple, I too needed an effective &lt;a href=&#34;https://en.wikipedia.org/wiki/Content_management_system&#34;&gt;Content Management System (CMS)&lt;/a&gt; into which I could quickly spin-up articles from Markdown files in my locally-hosted Obsidian repositories/knowledge base.&lt;/p&gt;
+&lt;h1 id=&#34;considering-the-options&#34;&gt;Considering the Options &lt;a href=&#34;#considering-the-options&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;I had previously considered using &lt;a href=&#34;https://getpelican.com/&#34;&gt;Pelican&lt;/a&gt; but was very quickly turned off to the idea because it is written in Python. Python (and the &lt;a href=&#34;&#34;&gt;Python Software Foundation&lt;/a&gt;) with its numerous &lt;a href=&#34;&#34;&gt;known issues&lt;/a&gt; when it comes the many &lt;em&gt;intentional&lt;/em&gt; breakages between versions as well as all of its 3rd-party dependencies is not a language (nor platform) that I can feel any peace of mind with using. I was searching for something that was far more &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;reliable&lt;/strong&gt;. I kept my eyes open, but was not keeping a look-out intensively.&lt;/p&gt;
+&lt;p&gt;Thus I came up with a list of &lt;em&gt;wants&lt;/em&gt; within an static-site generation framework:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;A &lt;strong&gt;simple&lt;/strong&gt; and &lt;strong&gt;reliable&lt;/strong&gt; framework which is without extreme dependencies or suscept to random breakages and long-hours of needless tinkering and repair.&lt;/li&gt;
+&lt;li&gt;Support of simple Content Management System (CMS), i.e., Markdown.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Lean&lt;/strong&gt; and &lt;strong&gt;fast&lt;/strong&gt; content generation. I do not want to spend all day rebuilding the site after a single (small) change in some large quandry of HTML inheritence.&lt;/li&gt;
+&lt;li&gt;Written in a language that I understand (and thus is easily maluable to my needs).&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this, I also considered other classic SSGs like: &lt;a href=&#34;https://jekyllrb.com&#34;&gt;Jekyll&lt;/a&gt; and &lt;a href=&#34;https://11ty.dev&#34;&gt;11ty&lt;/a&gt;, but they did not take my interest either. Jekyll is written in &lt;a href=&#34;&#34;&gt;Ruby&lt;/a&gt;, which have no significant background in (nor any interest to learn at this point), and 11ty relies on &lt;a href=&#34;&#34;&gt;Node.js&lt;/a&gt;, which I also try to avoid for the same reasons as stated above with Python. I briefly considered even writing one myself. If the job is not done well, then you might as well do it yourself, right? Yet, it was at this very moment that I stumbled across &lt;a href=&#34;&#34;&gt;Hugo&lt;/a&gt;. Needless to say, when I did find out about Hugo, I was overjoyed. It really did tick off all of boxes, all the things that I wanted and/or really needed to see were present. If Go were Fort Knox, Hugo would be the biggest and shiniest gold bar in all the store.&lt;/p&gt;
+&lt;h1 id=&#34;diving-into-hugo&#34;&gt;Diving into Hugo &lt;a href=&#34;#diving-into-hugo&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Hugo, an open-source static-site generator written in Go famous for being the fastest way to render HTML in the world. Needless to say, it was love at first sight; and O I do bless you, &lt;a href=&#34;&#34;&gt;Fireship&lt;/a&gt;, for introducing me to it in your &lt;a href=&#34;&#34;&gt;&amp;lsquo;Hugo in 100 Seconds&amp;rsquo;&lt;/a&gt; on YouTube. After that video I dove head-first into the Hugo install and deployment. I followed the &lt;a href=&#34;https://gohugo.io/getting-started/quick-start/&#34;&gt;quick-start guide&lt;/a&gt; on the official documentation site, and within minutes I had a beautiful static-site spun up in mere minutes. Although known for it, the sheer speed with which it was able to generate the content still took me by surprise.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Start building sites …
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;hugo v0.127.0-74e0f3bd63c51f3c7a0f07a7c779eec9e922957e+extended linux/amd64 BuildDate&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;2024-06-05T10:27:59Z VendorInfo&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;gohugoio
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;                   | EN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;-------------------+-----
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Pages            | &lt;span style=&#34;color:#ae81ff&#34;&gt;74&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Paginator pages  |  &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Non-page files   |  &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Static files     | &lt;span style=&#34;color:#ae81ff&#34;&gt;92&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Processed images |  &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Aliases          |  &lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  Cleaned          |  &lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Built in &lt;span style=&#34;color:#ae81ff&#34;&gt;113&lt;/span&gt; ms
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Environment: &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;development&amp;#34;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Serving pages from disk
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;Web Server is available at http://localhost:1313/ &lt;span style=&#34;color:#f92672&#34;&gt;(&lt;/span&gt;bind address 127.0.0.1&lt;span style=&#34;color:#f92672&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Only &lt;strong&gt;113 ms&lt;/strong&gt;, O my! What a good deal. Following this I went over and checked out a series of tutorials from &lt;a href=&#34;https://www.youtube.com/watch?embeds_referring_euri=https%3A%2F%2Fgohugo.io%2F&amp;amp;source_ve_path=Mjg2NjQsMTY0NTAz&amp;amp;feature=emb_share&amp;amp;v=ut1xtRZ1QOA&#34;&gt;Giraffe Academy&lt;/a&gt;. They helped me get a lot of my Hugo questions squared away, and I began to transfer a large chunk of my writings that I keep in Obsidian over to my content sections.&lt;/p&gt;
+&lt;p&gt;A &lt;a href=&#34;https://www.youtube.com/@mrbaeman39lolman60&#34;&gt;commenter&lt;/a&gt; on Fireship&amp;rsquo;s video humorously noted:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Hugo is the back-end developer&amp;rsquo;s best friend for making front-ends.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;And to that, my friend, I agree. I believe that once one gets a hang of its syntax and how it generates content, it is very easy to add new entries to or to customize to one&amp;rsquo;s heart&amp;rsquo;s desire—even for non-developers. So with that all said, to all readers: go off and have fun developing with Hugo!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Tags</title>
+      <link>http://localhost:1313/posts/tags/</link>
+      <pubDate>Thu, 20 Jun 2024 19:08:47 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/tags/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Manners in Japan</title>
+      <link>http://localhost:1313/posts/japan-etiquette/</link>
+      <pubDate>Thu, 20 Jun 2024 12:52:12 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/japan-etiquette/</guid>
+      <description>&lt;p&gt;There are some very &lt;strong&gt;basic manners&lt;/strong&gt; to keep in mind while one is in Japan. In this section, I am going to outline some of the fundamental manners that you should keep in mind during your stay in Japan. If reading isn&amp;rsquo;t your thing, here is also a short (~12 min.) &lt;a href=&#34;https://www.youtube.com/watch?v=0GCuvcTI090&#34;&gt;video&lt;/a&gt; you might watch instead to get an rough idea of what kinds of manners you should mind during your time in the Land of the Rising Sun.&lt;/p&gt;
+&lt;h2 id=&#34;rule-1-mind-personal-space&#34;&gt;Rule 1: Mind Personal Space! &lt;a href=&#34;#rule-1-mind-personal-space&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Make sure to always mind the personal space of others. This goes without saying in any case, but especially in Japan! Believe it or not, this also extends to your party as well. In Japan, PDA or &amp;ldquo;public displays of affection&amp;rdquo; are not considered typically in normal everyday (public) life. This means no handshakes, and instead bows. A short bow, in any case, will do the trick. I am sure you will be quite used to bowing before the end of your trip&amp;hellip;! Also, when boarding trains or cramped spaces, people will always make sure to switch their bookbags to the front of their bodies to make sure that they are not accidentally hitting anyone with it while moving inside of the train.&lt;/p&gt;
+&lt;h2 id=&#34;rule-2-do-not-eat-or-drink-while-walking&#34;&gt;Rule 2: Do NOT Eat or Drink While Walking! &lt;a href=&#34;#rule-2-do-not-eat-or-drink-while-walking&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;In Japan, it is NOT acceptable to eat or drink while walking. While strange as it might sound, it is not done. This is to both maintain a clean public environment as well as not to inconvenience others around you. If you pick up food from a stall, store, or vending machine, try to drink it outside of the place that you got it, or stow it inside of a bag. If you would like to snack on something later, make sure to walk to the side of the road where you will not be in the way of others in order to enjoy your meal/drink!&lt;/p&gt;
+&lt;h2 id=&#34;rule-3-no-shoes-inside&#34;&gt;Rule 3: No Shoes Inside! &lt;a href=&#34;#rule-3-no-shoes-inside&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Always make sure to be observant to see whether or not you need to remove your shoes when entering a building. If an establishment is shoeless, or always when entering someone&amp;rsquo;s home, you will need to remove your shoes when entering the building. There will be overshoes (often times) for you to slip into, as well as a box to keep your shoes in during your time inside. Remember, not all buildings require you to take off your shoes, but when they do, it should be obvious and easy!&lt;/p&gt;
+&lt;h2 id=&#34;rule-4-dont-play-with-your-chopsticks&#34;&gt;Rule 4: Don&amp;rsquo;t Play With Your Chopsticks! &lt;a href=&#34;#rule-4-dont-play-with-your-chopsticks&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Don&amp;rsquo;t drop or fiddle too much with your chopsticks while eating and try to maintain good and proper etiquette. There are a few lesser known taboos as well, these are: (1) do not pass food from chopstick to chopstick; and (2) do not stick your chopsticks upright into food, or rice. Both of these practices are related to Japanese funerary rites, so try to refrain!&lt;/p&gt;
+&lt;h2 id=&#34;rule-5-dont-tip&#34;&gt;Rule 5: Don&amp;rsquo;t Tip! &lt;a href=&#34;#rule-5-dont-tip&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;There is no tipping culture in Japan. In fact, tipping is considered rude; and more often than not, if you leave a tip, your waiter/waitress will try and return it to you thinking that you mistakenly left money at your table.&lt;/p&gt;
+&lt;h2 id=&#34;rule-6-no-public-phone-calls&#34;&gt;Rule 6: No Public Phone Calls! &lt;a href=&#34;#rule-6-no-public-phone-calls&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;It is considered to be rude to take phone calls in enclosed public spaces like restaurants or trains. In fact, in any public space it is best practice to not be loud, or even to talk much at all. Even packed trains are typically completely silent with only occasional conversations of utterances.&lt;/p&gt;
+&lt;h2 id=&#34;rule-7-dont-blow-your-nose&#34;&gt;Rule 7: Don&amp;rsquo;t Blow Your Nose! &lt;a href=&#34;#rule-7-dont-blow-your-nose&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;If you need to blow your nose, try and do it at home. It is considered rude and unsanitary in Japan to blow your nose in public (similar to someone farting in the U.S.). Instead, people will sniffle in to keep their snot from coming out. If you need to blow your nose, go to a bathroom or seek a place with less people.&lt;/p&gt;
+&lt;h2 id=&#34;rule-8-dont-litter&#34;&gt;Rule 8: Don&amp;rsquo;t Litter! &lt;a href=&#34;#rule-8-dont-litter&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Again, this should go without saying, however, it still must be said! There are very few trash cans in public in Japan. The expectation when you create trash is to keep it with you until you get home, or to throw it away in the trash can of the store that you got it from.&lt;/p&gt;
+&lt;h2 id=&#34;rule-9-dont-jaywalk&#34;&gt;Rule 9: Don&amp;rsquo;t Jaywalk! &lt;a href=&#34;#rule-9-dont-jaywalk&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;Wait until it is your turn to cross the street. Remember: jaywalking in the first step in a long, long series of steps to societal collapse (hahaha, I digress). Try to refrain from doing this, as it is looked down upon. Plus, let&amp;rsquo;s try and avoid any accidents to be had during your time overseas!&lt;/p&gt;
+&lt;h2 id=&#34;rule-10-dont-stress-too-much-about-all-these-rules&#34;&gt;Rule 10: Don&amp;rsquo;t Stress Too Much About All These Rules! &lt;a href=&#34;#rule-10-dont-stress-too-much-about-all-these-rules&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;So long as you try your best, and make it clear to others that you are attempting to be polite despite perhaps not being used to the customs and manners of Japan. You will be just fine! Do your best to avoid disrupting the peace, and refrain from mistreating peoples and places while in a country which is not your home. If so, there will be no problems to be had! More than anything, make sure to enjoy your time in Japan, and take it easy. It&amp;rsquo;s a vacation, after all!&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Music Video Monday:『花火』</title>
+      <link>http://localhost:1313/posts/mvm-hanabi/</link>
+      <pubDate>Thu, 20 Jun 2024 12:44:39 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/mvm-hanabi/</guid>
+      <description>&lt;p&gt;What we will be looking at today is [aiko -『花火』](&lt;a href=&#34;https://www.youtube.com/watch?v=iqGHxcTPRfI&amp;amp;ab_channel=aikoOfficial&#34;&gt;https://www.youtube.com/watch?v=iqGHxcTPRfI&amp;amp;ab_channel=aikoOfficial&lt;/a&gt;)and in this one we have a really hardcosre Y2K aestehic which really dominates much of the video itself. This is the first song that I have encountered of Aiko, and while I don&amp;rsquo;t know how indicitive it is of her entire style as an artist, but I will say that I enjoyed the song itself. I found that it has a really jumpy and sort of exciting feel to it, that I think is somewhat encountered in other artists similar to aiko. I would that that those which somewhat are close to aiko in their style would be mei ehara, or maybe Lovely Sumemr Chan, although these are not entirely set. I think that there are likely others as well, I will do a quick search on spoti-stats to try and get a better idea of what to think.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Dreaming of the French Press</title>
+      <link>http://localhost:1313/posts/french-press/</link>
+      <pubDate>Thu, 20 Jun 2024 12:42:08 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/french-press/</guid>
+      <description>&lt;h1 id=&#34;lofty-dreams-of-a-french-press&#34;&gt;Lofty Dreams of (a) French Press &lt;a href=&#34;#lofty-dreams-of-a-french-press&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;As the title implies, I have found myself recently thinking about getting a French press. One of the key reasons being that, I prefer, if possible, to [[Modernity, a Technological Nightmare|not have my appliances require electricity]]. A French press requires no outside help to function excluding the simple action of (French) pressing; and from an entirely (subjective) aesthetic view, they look nice. I (currently) believe that owning a French press would naturally incentive healthy coffee drinking habits (invoke moderation, as not doing so would require greater labor on the part of myself). The press also yet remains a far more affordable option as opposed to the full-blown electric coffee maker as well. In spite of not having much experience in the way of the habitual coffee brew, I do have sense of my personal preferences on the &amp;ldquo;things&amp;rdquo; of life (the choice of buying, and using, a French press being one of these many things). One other great thing about a French press (although not unique to one), is that I will have to buy and grind my own coffee beans.&lt;/p&gt;
+&lt;p&gt;The transition to the French Press does not stop at its mere adoption. This is just a single phase of my idealized greater shift in modal enjoyment. That of of the savoring of coffee. To get to the point: I hint at the adoption, too, of the coffee grinder. I have a strong desire to freshly grind my own coffee beans prior to coffee consumption. Supposedly, freshly ground coffee beans (as compared to pre-ground coffee grounds that one may buy at the store) have a certain freshness to them which aids in overall coffee quality: its scent, color, and flavor. I desire to enjoy these pleasantries inherit to laborious process. Through a poetic-worldview we might see that the very act of self-preparation is indeed the conceptual &amp;ldquo;freedom&amp;rdquo; manifest. I, for one, believe that within the very act of creation (in the Hermetic sense) therein present is meditative. O to heal the soul. O to drink coffee. There are very few things in life that actually smell better than freshly ground coffee beans. I would love that smell in the morning. The fact that more people do not grind their beans I personally find this to be rather offensive. As for the French press, however, we shall see. I cannot wait to savor the great fragrance. O to wonder of ye freshly ground and delicious brew; for I am the Brewmeister. I love a good ground bean. &amp;ldquo;Not my bean, not my problem,&amp;rdquo; that&amp;rsquo;s what I say.&lt;/p&gt;
+&lt;p&gt;I am also deep in thought considering many other forms of enjoying my coffee as well. This ranges from a large machine, perhaps one of those large metal machines that can brew a fine espresso shot. I hear these machines cost a fortune: the seven jewels and treasures, as well as many gold (chocolate) coins to obtain. The &amp;ldquo;civil&amp;rdquo; &amp;ldquo;man&amp;rdquo; seems to enjoy these toys, but he will not fool me. I am an honest man. I am a simple man. I shall stick to my French Press, for their toys are more toil and trouble than they are worth their weight in gold (&lt;strong&gt;NOTE&lt;/strong&gt;: a lot of gold).&lt;/p&gt;
+&lt;h1 id=&#34;actual-thoughts-post-french-press&#34;&gt;Actual Thoughts Post-French Press &lt;a href=&#34;#actual-thoughts-post-french-press&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h1&gt;</description>
+    </item>
+    
+    <item>
+      <title>WTF Is a Tarball</title>
+      <link>http://localhost:1313/posts/wtf-is-a-tarball/</link>
+      <pubDate>Thu, 20 Jun 2024 12:38:40 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/wtf-is-a-tarball/</guid>
+      <description>&lt;p&gt;MOST &lt;em&gt;strongly&lt;/em&gt; encourage one to keep their code in a (private) hosted Git repository. Nonetheless, it is also useful to know how to create and move around “tarball” files.&lt;/p&gt;
+&lt;h3 id=&#34;what-is-it&#34;&gt;What is it? &lt;a href=&#34;#what-is-it&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h3&gt;&lt;p&gt;A tarball is: a set of files packaged together into a single file, then compressed using the gzip compression program. “Tar” is short for “tape archive,” which tells you something about how long this particular mode of packaging files has been around! Most Unix software on the net is distributed as tarballs, and tarballs are also useful for moving around large binary files from place to place.&lt;/p&gt;
+&lt;p&gt;To create a tarball of all the files in the directory &lt;code&gt;mystuff&lt;/code&gt;, type&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar czf mystuff.tgz mystuff
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;and to unpack the files, type&lt;/p&gt;
+&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;tar xzf mystuff.tgz
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The mess of letters after the &lt;code&gt;tar&lt;/code&gt; command tells the program what it is supposed to do; they have the following meanings:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;f&lt;/strong&gt; filename: Specify the archive file name&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;c&lt;/strong&gt;: Create an archive file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;x&lt;/strong&gt;: Extract an archive file&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;z&lt;/strong&gt;: Put an archive through &lt;code&gt;gzip&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;t&lt;/strong&gt;: Get a table of contents for the archive&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;v&lt;/strong&gt;: Be verbose and tell me exactly what is happening&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you create a tarball on the cluster, you may want to use it to get a local copy on your laptop or home desktop. For this purpose, we recommend you use SFTP to move the files back and forth. If you are using a Linux machine or a Mac, you can open a terminal window and manipulate tarballs just as you would on the cluster. If you are on a Windows machine, you might be interested in using the &lt;a href=&#34;https://www.cygwin.com/&#34;&gt;Cygwin&lt;/a&gt; package, which provides a wide variety of Unix-style tools.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>My First Post</title>
+      <link>http://localhost:1313/posts/my-first-post/</link>
+      <pubDate>Thu, 20 Jun 2024 12:34:50 -0400</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-first-post/</guid>
+      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction &lt;a href=&#34;#introduction&#34; class=&#34;anchor&#34;&gt;🔗&lt;/a&gt;&lt;/h2&gt;&lt;p&gt;This is &lt;em&gt;some&lt;/em&gt; post that I have posted on my site.&lt;/p&gt;
+&lt;p&gt;Testing&amp;hellip;!&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

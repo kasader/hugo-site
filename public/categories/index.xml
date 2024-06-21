@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on kasader.cc/</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on kasader.cc/</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 20 Jun 2024 12:52:12 -0400</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Article</title>
+      <link>http://localhost:1313/categories/article/</link>
+      <pubDate>Thu, 20 Jun 2024 12:52:12 -0400</pubDate>
+      
+      <guid>http://localhost:1313/categories/article/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Music Video Monday (MVM)</title>
+      <link>http://localhost:1313/categories/music-video-monday-mvm/</link>
+      <pubDate>Thu, 20 Jun 2024 12:44:39 -0400</pubDate>
+      
+      <guid>http://localhost:1313/categories/music-video-monday-mvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Creative Writing</title>
+      <link>http://localhost:1313/categories/creative-writing/</link>
+      <pubDate>Thu, 20 Jun 2024 12:42:08 -0400</pubDate>
+      
+      <guid>http://localhost:1313/categories/creative-writing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>WTF Is ...?</title>
+      <link>http://localhost:1313/categories/wtf-is-.../</link>
+      <pubDate>Thu, 20 Jun 2024 12:38:40 -0400</pubDate>
+      
+      <guid>http://localhost:1313/categories/wtf-is-.../</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Writings</title>
+      <link>http://localhost:1313/categories/writings/</link>
+      <pubDate>Thu, 22 Feb 2024 12:52:12 -0400</pubDate>
+      
+      <guid>http://localhost:1313/categories/writings/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

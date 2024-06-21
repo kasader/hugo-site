@@ -1,0 +1,87 @@
+{{ define "main" }}
+
+<div class="max-wrapper">
+    <div id="list-page">
+        {{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+        {{ $paginator := .Paginate $pages }}
+        {{ range $paginator.Pages }}
+            <section class="list-item">
+                <h1 class="title"><a href="{{ .RelPermalink }}">{{ .Title }}</a></h1>
+
+                <div class="tips">
+                    <div class="date">
+                        <time datetime="{{ .PublishDate }}">{{ .PublishDate.Format "2006/01/02" }}</time>
+                    </div>
+
+                    {{ with .Params.Categories }}
+                        <div class="categories">
+                            <span>Categories:</span>
+                            {{ range first 2 . }}
+                                <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+
+                    {{ with .Params.Tags }}
+                        <div class="tags">
+                            <span>Tags:</span>
+                            {{ range first 5 . }}
+                                <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                </div>
+
+                <div class="summary">
+                    {{ with .Description }}
+                        {{ . }}
+                    {{ else }}
+                        {{ .Summary }}
+                    {{ end }}
+                </div>
+            </section>
+        {{ end }}
+
+    </div>
+    {{ partial "pagination.html" . }}
+</div>
+{{ end }}
+
+
+<!doctype html>
+<html>
+  <head>
+    {{ partial "head.html" . }}
+  </head>
+
+  <body>
+    <div class="home-wrapper">
+      {{ partial "header.html" . }}
+      <div class="home-title-wrapper">
+        <div class="home-title">SASHA CASADA</div>
+        <div class="home-subtitle-wrapper">
+          <div class="home-subtitle">
+            <a href="https://github.com/kasader/">github</a>
+            <a href="https://x.com">twitter</a>
+            <a href="https://linkedin.com">linkedin</a>
+            <a href="https://youtube.com">youtube</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <main class="main-wrapper">
+      <div class="main">{{ block "main" . }}{{ end }}</div>
+      <div class="side">
+        {{ range .Site.Sections }}
+            {{ if not .Params.hidden }}
+                {{ partial "side-recent.html" . }}
+            {{ end }}
+        {{ end }}
+        {{ partial "side-categories.html" . }}
+        {{ partial "side-tags.html" . }}
+    </div>
+</main>
+{{ partial "footer.html" . }}
+</body>
+</html>

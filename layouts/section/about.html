@@ -1,0 +1,15 @@
+{{ define "main" }}
+
+<section class="single">
+  <h1 class="title">{{ .Title }}</h1>
+
+  <hr />
+
+  <div class="content">{{ .Content }}</div>
+
+  {{ with and .Site.Params.remark42 .Params.show_comments }}
+  <hr />
+  {{ partial "comment.html" . }} {{ end }}
+</section>
+
+{{ end }}
