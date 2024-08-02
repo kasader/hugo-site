@@ -3,7 +3,7 @@ title = 'Manners in Japan'
 date = 2024-06-20T12:52:12-04:00
 draft = true
 categories = ['Article']
-tags = ['#日本語', '#eng', '#japan', '#travel']
+tags = ['日本語', 'eng', 'japan', 'travel']
 +++
 
 There are some very **basic manners** to keep in mind while one is in Japan. In this section, I am going to outline some of the fundamental manners that you should keep in mind during your stay in Japan. If reading isn't your thing, here is also a short (~12 min.) [video](https://www.youtube.com/watch?v=0GCuvcTI090) you might watch instead to get an rough idea of what kinds of manners you should mind during your time in the Land of the Rising Sun.

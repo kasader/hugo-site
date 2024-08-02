@@ -21,3 +21,9 @@ UPON the 12th DAY: The Bucket® become an earthenware vessel and emit dark smoke
 UPON the 13th, and FINAL DAY: The Bucket® become an sinister visage UNFIT for the eyes of. Staring over 12 minute(s), WILL drive interlocutevr mad with unknowable insights. Rapid emulsion of black pestilence makes sensation akin to „超先験;’भगवान्हस्त』when 目beholden, The Bvcket®, NOW of fleshy, odiovs constitvtion; grossly vrinate, sings the hymn of herbs, cries, and becoming rapturovs. Within the bvcket reveals genvine THAT vnsightly form: THAT loathsome fungal如 lapping CAKES: “شبحPHANTASMAL EYES on the BRAIN的INSIDE.”
 
 WE ALL WITNESSED.
+
+# The Colnel, Resurfaced
+
+_Below is an image of the Col. Sanders statue of legend, freshly robbed of its watery grave._
+
+![The grimly visage of Colnel Sanders, freshly robbed from his watery grave.](/colnel-sanders.webp "The Grim Col. Sanders")

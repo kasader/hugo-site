@@ -2,7 +2,7 @@
 title = 'Building a Static-Site With the Hugo Framework'
 date = 2024-06-20T20:09:55-04:00
 draft = true
-tags = ['#computing', '#go', '#hugo', '#web-dev']
+tags = ['computing', 'go', 'hugo', 'web-dev']
 +++
 
 I did not have trouble getting [this site]() up at all. For several years up-until now I have long desired to launch a personal website and blog; I needed a place to keep all of my thoughts together, and to structure around some narrative ([being seen by the public at large](https://www.sciencedaily.com/releases/2018/04/180420122913.htm)) to both help me learn, and (perhaps) to help others as well. Yet as nearly all ideas fall to the wayside, so were my hopes of web (land) ownership dashed by incessant demands of work and school. And so I entered a long period, the search for an efficient framework for [static-site generation (SSG)](https://en.wikipedia.org/wiki/Static_site_generator), which went without much avail.
