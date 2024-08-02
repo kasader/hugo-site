@@ -1,7 +1,7 @@
 +++
 title = 'WTF Is a Tarball'
 date = 2024-06-20T12:38:40-04:00
-draft = false
+draft = true
 categories = ['Article', 'WTF is ...?']
 +++
 

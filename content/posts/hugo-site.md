@@ -1,7 +1,7 @@
 +++
 title = 'Building a Static-Site With the Hugo Framework'
 date = 2024-06-20T20:09:55-04:00
-draft = false
+draft = true
 tags = ['computing', 'go', 'hugo', 'web-dev']
 +++
 
