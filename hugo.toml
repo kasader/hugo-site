@@ -1,6 +1,6 @@
 baseURL = 'https://example.org/'
 languageCode = 'en-us'
 title = 'kasader.cc/'
-theme = 'flat'
+theme = 'hugo-theme-flat'
 
 sectionPagesMenu = 'main'
